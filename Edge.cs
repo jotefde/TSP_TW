@@ -20,6 +20,28 @@ namespace TSP_TW
             Time = time;
             Edge.Count++;
         }
+
+        public Node SecondNode(Node node)
+        {
+            if (node == A)
+                return B;
+            else
+                return A;
+        }
+
+        public bool ContainsNode(Node node)
+        {
+            return node == B || node == A;
+        }
+    }
+
+    public class EdgeTimeComp : Comparer<Edge>
+    {
+        // Compares by Length, Height, and Width.
+        public override int Compare(Edge x, Edge y)
+        {
+            return x.Time.CompareTo(y.Time);
+        }
     }
 }
 

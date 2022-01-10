@@ -19,10 +19,14 @@ namespace TSP_TW
         static void Main(string[] args)
         {
             var graph = new Graph();
-            graph.GenerateOptimal(10, 200);
+            graph.GenerateOptimal(5, 200);
             PrintAdj(graph);
             graph.FillGraph(0.77f);
             PrintAdj(graph);
+            var greedy = new Greedy(graph);
+            var v = graph.Nodes.ConvertAll(x => false).ToArray();
+            v[0] = true;
+            (bool[] solution, int ans) = greedy.Solve(graph.ToAdjMatrix(), v, 0, 1, 0, graph.Edges[0].Time, 200);
         }
     }
 }

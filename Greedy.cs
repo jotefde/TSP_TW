@@ -6,54 +6,59 @@ using System.Threading.Tasks;
 
 namespace TSP_TW
 {
-    internal class Greedy
+    public class Greedy
     {
         Graph problem;
-        Greedy(Graph graph)
+        public Greedy(Graph graph)
         {
             problem = graph;
         }
-        //List<Node> Solve(Node start, Node current, int time)
-        //{   
-        //    List<Edge> possibleEdges = new List<Edge>();
-        //    possibleEdges = problem.Edges.FindAll(edge => edge.A == current || edge.B == current);
-        //    List<Node> solution;
 
-        //    if (current.IsVisited) {
-        //        if(start == current)
-        //            return new List<Node>(){current};
-        //        else
-        //            return new List<Node>();
-        //    }
-
-        //    foreach (var edge in possibleEdges)
-        //    {
-        //        if(edge.A != current)
-        //        {
-        //            solution = Solve(start,edge.A,1);
-        //        }
-        //        else
-        //        {
-        //            solution = Solve(start, edge.B,1);
-        //        }
-
-                
-        //        solution.Add(current);
-
-        //        if (solution.Contains(start) && problem.Nodes.All(n => n.IsVisited))
-        //        {
-        //            return solution;
-        //        }
-        //        else
-        //        {   
-        //            solution.ForEach(n => n.IsVisited = false);
-        //            return new List<Node>();
-        //        }
-        //    }
-        //}
-        public void Solve(List<Node> path,Node current,int time)
+        List<Node> SolveRec(List<Node> path, int time)
         {
+            Node current = path.FirstOrDefault();
+            List<Edge> possibleEdges = problem.Edges.FindAll(edge => edge.ContainsNode(current));
+            possibleEdges.Sort(new EdgeTimeComp());
 
+            foreach(Edge edge in possibleEdges)
+            {
+                Edge lowerestCostEdge = possibleEdges.FirstOrDefault();
+                Node nextNode = lowerestCostEdge.SecondNode(current);
+                if (nextNode.IsVisited == false)
+                {
+                    nextNode.IsVisited = true;
+                    // ??
+                    SolveRec(path, time);
+                }
+
+            }    
+        }
+
+        public (bool[], int) Solve(int[,] adj, bool[] v,
+                    int currentIndex, int n,
+                    int count, int cost, int ans)
+        {
+            if (count == n && adj[currentIndex, 0] > 0)
+            {
+                ans = Math.Min(ans, cost + adj[currentIndex, 0]);
+                return (v, ans);
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                if (v[i] == false && adj[currentIndex, i] > 0)
+                {
+
+                    // odwiedziony
+                    v[i] = true;
+                    (bool[] newV, int newAns) = Solve(adj, v, i, n, count + 1,
+                              cost + adj[currentIndex, i], ans);
+                    ans = newAns;
+                    // odznacz
+                    v[i] = false;
+                }
+            }
+            return (v, ans);
         }
     }
 }

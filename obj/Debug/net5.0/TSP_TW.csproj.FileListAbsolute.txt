@@ -1,0 +1,16 @@
+C:\Studia\semestr_3\OK\TSP_TW\bin\Debug\net5.0\TSP_TW.exe
+C:\Studia\semestr_3\OK\TSP_TW\bin\Debug\net5.0\TSP_TW.deps.json
+C:\Studia\semestr_3\OK\TSP_TW\bin\Debug\net5.0\TSP_TW.runtimeconfig.json
+C:\Studia\semestr_3\OK\TSP_TW\bin\Debug\net5.0\TSP_TW.runtimeconfig.dev.json
+C:\Studia\semestr_3\OK\TSP_TW\bin\Debug\net5.0\TSP_TW.dll
+C:\Studia\semestr_3\OK\TSP_TW\bin\Debug\net5.0\ref\TSP_TW.dll
+C:\Studia\semestr_3\OK\TSP_TW\bin\Debug\net5.0\TSP_TW.pdb
+C:\Studia\semestr_3\OK\TSP_TW\obj\Debug\net5.0\TSP_TW.csproj.AssemblyReference.cache
+C:\Studia\semestr_3\OK\TSP_TW\obj\Debug\net5.0\TSP_TW.GeneratedMSBuildEditorConfig.editorconfig
+C:\Studia\semestr_3\OK\TSP_TW\obj\Debug\net5.0\TSP_TW.AssemblyInfoInputs.cache
+C:\Studia\semestr_3\OK\TSP_TW\obj\Debug\net5.0\TSP_TW.AssemblyInfo.cs
+C:\Studia\semestr_3\OK\TSP_TW\obj\Debug\net5.0\TSP_TW.csproj.CoreCompileInputs.cache
+C:\Studia\semestr_3\OK\TSP_TW\obj\Debug\net5.0\TSP_TW.dll
+C:\Studia\semestr_3\OK\TSP_TW\obj\Debug\net5.0\ref\TSP_TW.dll
+C:\Studia\semestr_3\OK\TSP_TW\obj\Debug\net5.0\TSP_TW.pdb
+C:\Studia\semestr_3\OK\TSP_TW\obj\Debug\net5.0\TSP_TW.genruntimeconfig.cache
